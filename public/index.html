@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-panel">
+            <h1>Command Center</h1>
+            <div id="status-indicator" class="status offline">
+                <span class="status-dot"></span>
+                <span id="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <main class="controls-grid">
+            <div class="glass-panel control-section">
+                <h2>Power Controls</h2>
+                <div class="button-grid">
+                    <button class="btn btn-wake" disabled>Wake PC</button>
+                    <button class="btn btn-sleep" disabled>Sleep</button>
+                    <button class="btn btn-shutdown" disabled>Shut Down</button>
+                    <button class="btn btn-restart" disabled>Restart</button>
+                    <button class="btn btn-lock" disabled>Lock</button>
+                </div>
+            </div>
+
+            <div class="glass-panel control-section">
+                <h2>Workspaces</h2>
+                <div class="button-grid">
+                    <button class="btn btn-workspace" disabled>WORK</button>
+                    <button class="btn btn-workspace" disabled>STUDY</button>
+                    <button class="btn btn-workspace" disabled>GAMING</button>
+                    <button class="btn btn-workspace" disabled>PERSONAL</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

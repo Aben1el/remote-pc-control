@@ -1,0 +1,53 @@
+:root {
+    --deep-black: #050505;
+    --glass-bg: rgba(0, 0, 0, 0.55);
+    --elevated: #1A1A1A;
+    --soft-white: #E6E6E6;
+    --muted-gray: #8A8A8A;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+body {
+    background-color: var(--deep-black);
+    color: var(--soft-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.app-container { width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 20px; }
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+header { display: flex; justify-content: space-between; align-items: center; }
+header h1 { font-size: 1.5rem; font-weight: 600; }
+
+.status { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted-gray); }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--muted-gray); transition: 0.3s; }
+.status.online .status-dot { background-color: #4ade80; box-shadow: 0 0 8px rgba(74, 222, 128, 0.5); }
+
+h2 { font-size: 1.1rem; font-weight: 500; margin-bottom: 16px; color: #fff; }
+.button-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+.btn {
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    color: var(--soft-white);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-wake { grid-column: span 2; }
