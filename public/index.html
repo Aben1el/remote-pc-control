@@ -2,25 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-glow"></div>
+    
     <div class="app-container">
-        <header class="glass-panel">
-            <h1>Command Center</h1>
-            <div id="status-indicator" class="status offline">
-                <span class="status-dot"></span>
-                <span id="status-text">Connecting...</span>
+        <header class="glass-panel header-panel">
+            <div class="header-content">
+                <div>
+                    <h1 class="app-title">Command Center</h1>
+                    <p class="app-subtitle">Local Network Control</p>
+                </div>
+                <div id="status-indicator" class="status offline">
+                    <span class="status-dot"></span>
+                    <span id="status-text">Connecting</span>
+                </div>
             </div>
         </header>
 
         <main class="controls-grid">
+            <!-- Power Controls -->
             <div class="glass-panel control-section">
-                <h2>Power Controls</h2>
-                <div class="button-grid">
-                    <button class="btn btn-wake" disabled>Wake PC</button>
+                <div class="section-header">
+                    <h2>Power</h2>
+                    <span class="section-icon">⏻</span>
+                </div>
+                <div class="button-grid power-grid">
+                    <button class="btn btn-wake" disabled>Wake</button>
                     <button class="btn btn-sleep" disabled>Sleep</button>
                     <button class="btn btn-shutdown" disabled>Shut Down</button>
                     <button class="btn btn-restart" disabled>Restart</button>
@@ -28,16 +41,38 @@
                 </div>
             </div>
 
+            <!-- Workspaces -->
             <div class="glass-panel control-section">
-                <h2>Workspaces</h2>
-                <div class="button-grid">
-                    <button class="btn btn-workspace" disabled>WORK</button>
-                    <button class="btn btn-workspace" disabled>STUDY</button>
-                    <button class="btn btn-workspace" disabled>GAMING</button>
-                    <button class="btn btn-workspace" disabled>PERSONAL</button>
+                <div class="section-header">
+                    <h2>Workspaces</h2>
+                    <button class="btn-edit" id="edit-btn" disabled>Manage</button>
+                </div>
+                <div id="workspace-buttons" class="button-grid workspace-grid">
+                    <!-- Buttons injected by JS -->
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Visual Editor Modal -->
+    <div id="editor-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h3>Manage Workspaces</h3>
+                <button class="btn-close" id="close-modal">&times;</button>
+            </div>
+            
+            <div id="workspace-editor-container"></div>
+
+            <button class="btn btn-add-workspace" id="add-workspace-btn">
+                + New Workspace
+            </button>
+
+            <div class="modal-actions">
+                <button class="btn btn-save" id="save-workspaces">Save Changes</button>
+                <button class="btn btn-cancel" id="cancel-edit">Cancel</button>
+            </div>
+        </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>

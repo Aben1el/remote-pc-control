@@ -1,1 +1,13 @@
-   node_modules/
+function getWorkspaces() {
+    if (!fs.existsSync(workspaceFile)) {
+        const defaults = {
+            "WORK": ["https://open.spotify.com/artist/4RRmL81NhhouCKGo8I6GaU?si=2b5202771bce42c5", "https://github.com", "https://mail.google.com"],
+            "STUDY": ["notepad", "https://google.com"],
+            "GAMING": ["steam", "discord"],
+            "PERSONAL": ["https://open.spotify.com", "https://youtube.com"]
+        };
+        fs.writeFileSync(workspaceFile, JSON.stringify(defaults, null, 2));
+        return defaults;
+    }
+    return JSON.parse(fs.readFileSync(workspaceFile, 'utf8'));
+}

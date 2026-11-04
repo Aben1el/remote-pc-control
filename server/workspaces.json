@@ -1,0 +1,19 @@
+{
+  "WORK": [
+    "spotify",
+    "https://github.com",
+    "https://mail.google.com"
+  ],
+  "STUDY": [
+    "notepad",
+    "https://google.com"
+  ],
+  "GAMING": [
+    "discord",
+    "Fastclient "
+  ],
+  "PERSONAL": [
+    "spotify",
+    "https://youtube.com"
+  ]
+}
