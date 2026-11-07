@@ -1,19 +1,22 @@
 {
   "WORK": [
-    "spotify",
-    "https://github.com",
-    "https://mail.google.com"
-  ],
-  "STUDY": [
-    "notepad",
-    "https://google.com"
+    "https://github.com/dashboard",
+    "https://chat.qwen.ai",
+    "https://open.spotify.com"
   ],
   "GAMING": [
+    "fastclient",
     "discord",
-    "Fastclient "
+    "https://open.spotify.com"
   ],
-  "PERSONAL": [
-    "spotify",
-    "https://youtube.com"
+  "TRADE": [
+    "https://www.tradingview.com",
+    "https://kick.com/tjr",
+    "https://open.spotify.com"
+  ],
+  "CHILL": [
+    "https://www.lookmovie2.to/",
+    "telegram",
+    "https://www.youtube.com/"
   ]
 }

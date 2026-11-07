@@ -20,10 +20,10 @@ app.use(express.json()); // Allow receiving JSON data
 function getWorkspaces() {
     if (!fs.existsSync(workspaceFile)) {
         const defaults = {
-            "WORK": ["spotify", "https://github.com", "https://mail.google.com"],
-            "STUDY": ["notepad", "https://google.com"],
-            "GAMING": ["steam", "discord"],
-            "PERSONAL": ["spotify", "https://youtube.com"]
+            "WORK": ["https://github.com/dashboard", "https://chat.qwen.ai", "https://open.spotify.com"],
+            "GAMING": ["fastclient", "discord", "https://open.spotify.com"],
+            "TRADE": ["https://www.tradingview.com", "https://kick.com/tjr", "https://open.spotify.com"],
+            "CHILL": ["https://www.lookmovie2.to/", "telegram", "https://www.youtube.com/"]
         };
         fs.writeFileSync(workspaceFile, JSON.stringify(defaults, null, 2));
         return defaults;
